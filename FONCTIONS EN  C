@@ -1,0 +1,465 @@
+
+//calcule factorielle 
+#include <stdio.h>
+
+    int factorielle(int n){
+        int t=1;
+        for(int i=1;i<=n;i++){
+            t=t*i;
+        }
+        return t;
+    }
+
+int main() {
+    int x,s;
+    
+    printf("ecrire un nombre :");
+    scanf("%d",&x);
+    
+    s=factorielle(x);
+    
+    printf("le factoriel de %d est %d :",x,s);
+
+    return 0;
+}
+==================================================================================
+ //le plus grand nombre
+#include <stdio.h>
+
+int max(int x,int y){
+    int max;
+    if(x>y){
+        max=x;
+    }else if(x<y){
+        max=y;
+    }
+    printf("le plus grand nombre est :%d",max);
+}
+
+int main() {
+    
+    int a,b;
+    
+    printf("ecrire deux nombre :");
+    scanf("%d %d",&a,&b);
+    max(a,b);
+   
+    return 0;
+}
+=================================================================================
+
+//somme des nombre
+
+#include <stdio.h>
+
+  int calcule_nombre(int list[], int x){
+   int t=0;
+     
+    for(int i=0;i<x;i++){
+         t=t+list[i];
+    }
+    return t; 
+  }
+
+int main() {
+    int x,t=0;
+    
+    printf("ecrire combien des nombre dans votre nombre:");
+    scanf("%d",&x);
+    
+    int list[x];
+    
+    for(int i=0;i<x;i++){
+    printf("ecrire le nombre :");
+    scanf("%d",&list[i]);
+    }
+    
+    printf("votre nombre est :");
+     for(int i=0;i<x;i++){
+     printf("%d",list[i]);
+     }
+     
+     t=calcule_nombre(list,x);
+     printf("\nest la somme de votre nombre est :%d",t);  
+     
+
+    
+    
+    return 0;
+}
+
+==================================================================================
+
+// celsius to fahrenheit et fahrenheit to celsius
+#include <stdio.h>
+
+int celsius_to_fahrenheit(int x){
+    x=x*9/5+32;
+    printf("%d",x);
+}
+
+int fahrenheit_to_celsius(int x){
+    x=(x-32)*5/9;
+    printf("%d",x);
+}
+
+
+int main() {
+    int choix;
+    
+    printf("Choisire le nombre de votre Formules de conversion\n");
+    printf("1-celsius to fahrenheit\n");
+    printf("2-fahrenheit to celsius\n");
+    scanf("%d",&choix);
+    
+    if(choix==1){
+        int c=0;
+        
+        printf("Ecrire la valeur en Celsius : ");
+        scanf("%d",&c);
+        celsius_to_fahrenheit(c);
+        
+    }else if(choix==2){
+        int f=0;
+        
+        printf("Ecrire la valeur en fahrenheit : ");
+        scanf("%d",&f);
+        celsius_to_fahrenheit(f);
+    }
+    
+    return 0;
+}
+==================================================================================
+
+// dimension du rectangle 
+
+#include <stdio.h>
+int perimetre_rectangle(int x,int y){
+    int p;
+    p=2*(x+y);
+    printf("le perimetre du rectangle est %d\n",p);
+}
+
+int Surface_rectangle(int x,int y){
+    int s;
+    s=x*y;
+    printf("la surface du rectangle est %d\n",s);
+}
+
+int main() {
+    
+    int lo,la;
+    
+    printf("ecrire le longueur et le largeur de rectangle :");
+    scanf("%d %d",&lo,&la);
+    
+    Surface_rectangle(lo,la);
+    perimetre_rectangle(lo,la);
+    
+    
+    
+    return 0;
+}
+==================================================================================
+// multiplication d'un nombre
+
+#include <stdio.h>
+
+int multiplication(int x){
+    for(int i=0;i<=10;i++){
+        printf("%d*%d=%d\n",x,i,x*i);
+    }
+}
+
+int main() {
+    // Write C code here
+    int x;
+    
+    printf("ecrire un nombre :");
+    scanf("%d",&x);
+    
+    multiplication(x);
+    return 0;
+}
+=================================================================================
+
+
+// calcule puissance
+
+#include <stdio.h>
+
+int puissance(int b,int e){
+    int t=1;
+    
+    for(int i=0;i<e;i++){
+        t=b*t;
+    }
+    //printf("%d",t);
+return t;
+}
+
+int main() {
+    int b,e;
+    
+    printf("ecrire la base et l'exposant :");
+    scanf("%d %d",&b,&e);
+    puissance(b,e);
+    
+    float v=puissance(r, 3)+ puissance(r1, 2);
+    
+    
+    return 0;
+}
+
+
+=================================================================================
+
+//PGCD 
+
+#include <stdio.h>
+
+int pgcd(int a, int b){
+    int p, min;
+    if(a>b){
+        min=b;
+    }else {min=a;}
+    
+    
+    for(int i=1;i<=min;i++){
+        if(a % i ==0 && b % i ==0 ){
+            p = i;
+        }
+    }
+    
+    return p;
+    
+}
+
+int main() {
+    
+    //Les diviseurs de 12 sont 1, 2, 3, 4, 6 et 12
+    int a,b,t;
+    
+    
+    printf("ecrire les deux nombre :");
+    scanf("%d %d",&a,&b);
+    
+    int list1[a];
+    
+  
+    
+    t=pgcd(a,b);
+    printf("%d",t);
+    
+    return 0;
+}
+
+
+=================================================================================
+
+// cherche un nnombre dans un list
+#include <stdio.h>
+
+ int chercher_valeur(int list[],int valeur,int tail){
+     for(int i=0;i<=tail;i++){
+         if(list[i]==valeur){
+             return i;
+         }
+     }
+ }
+
+int main() {
+    // Write C code here
+    int n,c,t;
+    
+    printf("ecrire la valeur du list :");
+    scanf("%d",&n);
+    
+    int list[n];
+    
+    for(int i=0;i<n;i++){
+    printf("ecrire le nombre #%d =>",i);
+    scanf("%d",&list[i]);
+    }
+    
+    printf("Entrer la valeur a chercher: ");
+    scanf("%d",&c);
+    
+    t=chercher_valeur(list,c,n);
+    
+    printf("le nombre %d est dans la cellule %d ",c,t);
+    
+    return 0;
+}
+====================================================================================
+
+// compter_occurrences
+
+#include <stdio.h>
+
+   int compter_occurrences(int list[],int x,int valeur){
+       
+       int t=0;
+       for(int i=0;i<x;i++){
+           if(list[i]==valeur){
+               t++;
+           }
+       }return t;
+   }
+
+int main() {
+    // Write C code here
+    int x,a,v;
+    
+    printf("ecrire la taile des list :");
+    scanf("%d",&x);
+
+   int list[x];
+
+   for(int i=0;i<x;i++){
+       printf("ecrire la valeur de #%d =>",i);
+       scanf("%d",&list[i]);
+   }
+   
+   printf("ecrire la valeur que vous voulez voir combien il se répeter :");
+   scanf("%d",&a);
+
+   v=compter_occurrences(list,x,a);
+  
+   printf("le nombre se répter %d fois",v);
+
+    return 0;
+}
+=================================================================================
+
+
+// max
+
+#include <stdio.h>
+
+
+int max(int list[],int tail){
+    int max=0;
+    for(int i=0;i<tail;i++){
+        if(list[i]>max){
+            max=list[i];
+        }
+    }return max;
+}
+
+int main() {
+    
+    
+    int x,t;
+    
+    printf("ecrire la tail du list :");
+    scanf("%d",&x);
+    
+    int list[x];
+    
+    for(int i=0;i<x;i++){
+        printf("ecrire la valeur #%d =>",i);
+        scanf("%d",&list[i]);
+    }
+    
+    t=max(list,x);
+    printf("le plus grand nombre de list est :%d",t); 
+    
+    return 0;
+}
+
+====================================================================================
+
+
+// fusionner deux tableaux 
+
+#include <stdio.h>
+
+ int fusionner_tableaux(int tail,int list1[],int list2[],int list3[]){
+     
+     for(int i=0;i<tail;i++){
+         list3[i]=list1[i];
+     }
+     for(int i=0;i<tail;i++){
+         list3[i+tail]=list2[i];
+     }
+     return list3[tail];
+ }
+
+
+
+int main() {
+    // Write C code here
+    int tail;
+    
+    printf("ecrire la taille des deux tableaux :");
+    scanf("%d",&tail);
+    
+    int list1[tail];
+    int list2[tail];
+    
+    for(int i=0;i<tail;i++){
+        printf("remplire le premier tableau :");
+        printf("#%d==>",i);
+        scanf("%d",&list1[i]);
+    }
+    
+    for(int i=0;i<tail;i++){
+        printf("remplire le deuxieme tableau :");
+        printf("#%d==>",i);
+        scanf("%d",&list2[i]);
+    }
+    
+    int list3[tail * 2];
+    
+    fusionner_tableaux(tail, list1, list2, list3);
+    printf("Tableau fusionné : ");
+   
+    for(int i=0;i<tail*2;i++) {
+        printf("%d ", list3[i]);
+    }
+    
+
+    return 0;
+}
+====================================================================================
+// les nombre pairs
+
+#include <stdio.h>
+
+int trouver_pairs(int tail,int list1[],int list[]){
+    int j=0;
+    for(int i=0;i<tail;i++){
+        if(list1[i]%2==0){
+            list[j]=list1[i];
+            j++;
+        }
+    }return  j;
+}
+
+
+
+int main() {
+    // Write C code here
+    int tail;
+    
+    printf("ecrire la tail du list :");
+    scanf("%d",&tail);
+    
+    int list[tail];
+    int pairs[tail];
+    
+    printf("remplire la list :\n");
+    for(int i=0;i<tail;i++){
+        printf("%d==>",i);
+        scanf("%d",&list[i]);
+    }
+    
+    int p= trouver_pairs(tail, list, pairs);
+    printf("Les nombres pairs sont : ");
+    for (int i = 0; i < p; i++) {
+        printf("%d ", pairs[i]);
+    }
+    
+    return 0;
+}
